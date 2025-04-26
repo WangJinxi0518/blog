@@ -158,7 +158,7 @@ const EXPERIENCES = [
             <a
               target="_blank"
               rel="noopener noreferrer"
-              href="https://github.com/hta218/Travel_Egypt"
+              href="https://github.com/WangJinxi0518/Travel_Egypt"
             >
               Travel Egypt
             </a>{' '}

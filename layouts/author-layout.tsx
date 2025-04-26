@@ -128,7 +128,7 @@ export function AuthorLayout({ children }: Props) {
               </ul>
               <p>
                 See my{' '}
-                <a href="https://github.com/hta218/leohuynh.dev" target="_blank">
+                <a href="https://github.com/WangJinxi0518/leohuynh.dev" target="_blank">
                   Github repository
                 </a>{' '}
                 for this blog.
