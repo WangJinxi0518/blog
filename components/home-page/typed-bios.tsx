@@ -56,7 +56,7 @@ export function TypedBios() {
           我是一个喜欢狗的人. <Twemoji emoji="dog" />
         </li>
         <li>
-            我是一个热爱健身的人.
+          我是一个热爱健身的人.
           <span className="ml-1">
             <Twemoji emoji="soccer-ball" />,
             <Twemoji emoji="man-swimming" />,
