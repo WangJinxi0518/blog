@@ -1,6 +1,8 @@
+"use client"
+import { useState } from 'react'
 import type { Author } from 'contentlayer/generated'
 import type { ReactNode } from 'react'
-import { CareerTimeline } from '~/components/author/career'
+// import { CareerTimeline } from '~/components/author/career'
 import { SocialAccounts } from '~/components/author/social-accounts'
 import { ProfileCard } from '~/components/cards/profile'
 import { Button } from '~/components/ui/button'
@@ -16,11 +18,13 @@ interface Props {
 }
 
 export function AuthorLayout({ children }: Props) {
+  const [showQRModal, setShowQRModal] = useState(false);
+  
   return (
     <Container className="pt-4 lg:pt-12">
       <PageHeader
         title="About"
-        description="A bit of background on who I am, what I do, and why I started this blog. Nothing too serious, just a little intro to the person typing away behind the scenes."
+        description="大家好！我是你们的新朋友，平时混迹于科技圈，爱捣鼓美食和剪辑。开了这个博客，想分享点我的生活碎片和开发经验，希望能给你的日常添点灵感和帮助到你！没什么严肃内容，就是幕后码字的我，想和你聊聊那些有趣的小事～"
         className="border-b border-gray-200 dark:border-gray-700"
       />
       <div className="py-8 md:grid md:grid-cols-3">
@@ -46,15 +50,16 @@ export function AuthorLayout({ children }: Props) {
             </div>
             <div>
               <div className="mb-[1em] mt-[2em] flex items-center justify-between [&>h2]:my-0">
-                <h2>My career</h2>
-                <Button as="a" href="/static/resume.pdf" target="_blank">
-                  <span>Resume</span>
+                <h2>我的简历</h2>
+                <Button as="a" href="#" target="_blank">
+                  <span></span>
                   <Twemoji emoji="page-facing-up" />
                 </Button>
               </div>
-              <CareerTimeline />
+              {/* <CareerTimeline /> */}
             </div>
-            <div>
+            {/* */}
+            {/* <div>
               <h2>Tech stack</h2>
               <p>
                 This blog is hosted on{' '}
@@ -115,11 +120,11 @@ export function AuthorLayout({ children }: Props) {
                   components, adding <code>/snippets</code>, <code>/books</code>,{' '}
                   <code>/movies</code> page, etc.
                 </li>
-                {/* <li>
+                <li>
                   <Twemoji emoji="inbox-tray" /> Bumping up <code>mdx-bundler</code>,{' '}
                   <code>rehype</code>/<code>remark</code> plugins and dependencies to the latest
                   version
-                </li> */}
+                </li>
               </ul>
               <p>
                 See my{' '}
@@ -149,8 +154,8 @@ export function AuthorLayout({ children }: Props) {
                   </li>
                 </ul>
               </div>
-            </div>
-            <div>
+            </div> */}
+            {/* <div>
               <h2>Assets</h2>
               <p>
                 Most of the images in my blog are from{' '}
@@ -170,64 +175,70 @@ export function AuthorLayout({ children }: Props) {
               <p>
                 Thanks for the free resources <Twemoji emoji="folded-hands" />.
               </p>
-            </div>
+            </div> */}
             <div>
-              <h2>Contact</h2>
+              <h2>联系我</h2>
               <p>
-                Reach out to me at{' '}
-                <a href={`mailto:${SITE_METADATA.email}`}>{SITE_METADATA.email}</a> or find me on
-                social media:
+                通过 at 联系我
+                <a href={`mailto:${SITE_METADATA.email}`}>{SITE_METADATA.email}</a> or social media:
               </p>
               <SocialAccounts />
             </div>
             <div>
-              <h2>Support</h2>
-              <p>If you appreciate my work, consider supporting me:</p>
+              <h2>支持我</h2>
+              <p>如果你觉得我做得还不错，就支持一下吧:</p>
               <div className="flex flex-col gap-4">
-                <a
-                  href={SITE_METADATA.support.buyMeACoffee}
-                  target="_blank"
-                  className="[&_.image-container]:mx-0"
+                <div 
+                  onClick={() => setShowQRModal(true)}
+                  className="cursor-pointer hover:opacity-90 transition-opacity [&_.image-container]:mx-0"
                 >
                   <Image
-                    src="/static/images/bmc-button.png"
-                    alt="Buy Me A Coffee"
-                    width={213.7}
-                    height={60}
-                    style={{ height: 60 }}
-                  />
-                </a>
-                <a
-                  href={SITE_METADATA.support.paypal}
-                  target="_blank"
-                  className="flex h-15 w-[214px] items-center rounded-lg bg-[#009cde]/70 p-1"
-                >
-                  <Image
-                    src="/static/images/paypal-logo.png"
-                    alt="Donate via PayPal"
-                    width={225.88}
-                    height={60}
-                    style={{ height: 30, width: 'auto' }}
-                  />
-                </a>
-                <a
-                  href={SITE_METADATA.support.kofi}
-                  target="_blank"
-                  className="[&_.image-container]:mx-0"
-                >
-                  <Image
-                    src="/static/images/kofi.png"
-                    alt="Support me on Ko-fi"
+                    src="/static/pay/wechat.jpg"
+                    alt="Support me on Wechat"
                     width={297}
                     height={60}
                     style={{ height: 60, width: 'auto' }}
                   />
-                </a>
+                  <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">点击查看大图</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
+
+      {/* QR Code Modal */}
+      {showQRModal && (
+        <div 
+          className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center p-4"
+          onClick={() => setShowQRModal(false)}
+        >
+          <div className="relative max-w-lg w-full">
+            <div 
+              className="absolute top-2 right-2 w-8 h-8 flex items-center justify-center rounded-full bg-gray-200 dark:bg-gray-800 cursor-pointer"
+              onClick={(e) => {
+                e.stopPropagation();
+                setShowQRModal(false);
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"></line>
+                <line x1="6" y1="6" x2="18" y2="18"></line>
+              </svg>
+            </div>
+            <div className="bg-white dark:bg-gray-900 rounded-lg overflow-hidden p-4">
+              <Image
+                src="/static/pay/wechat.jpg"
+                alt="Support me on Wechat QR Code"
+                width={600}
+                height={600}
+                className="w-full h-auto"
+              />
+              <p className="text-center mt-4 text-lg">微信赞赏码</p>
+            </div>
+          </div>
+        </div>
+      )}
     </Container>
   )
 }
