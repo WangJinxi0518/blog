@@ -116,6 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <KBarSearchProvider configs={SITE_METADATA.search.kbarConfigs}>
             <Header />
             <main className="mb-auto grow">{children}</main>
+            <SpeedInsights />
           </KBarSearchProvider>
           <Footer />
         </ThemeProviders>
