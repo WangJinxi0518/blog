@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/stats/:match*",
-      "destination": "https://analytics.wangjinxi.me//:match*"
+      "destination": "https://analytics.wangjinxi.me/:match*"
     }
   ],
   "headers": [
