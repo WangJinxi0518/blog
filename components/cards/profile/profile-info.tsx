@@ -20,13 +20,13 @@ const SOCIALS = [
     Icon: () => <Github size={20} strokeWidth={1.5} />,
     umamiEvent: 'profile-card-github',
   },
-  {
-    platform: 'linkedin',
-    handle: getAccountHandle(SITE_METADATA.linkedin),
-    href: SITE_METADATA.linkedin,
-    Icon: () => <Linkedin size={20} strokeWidth={1.5} />,
-    umamiEvent: 'profile-card-linkedin',
-  },
+  // {
+  //   platform: 'linkedin',
+  //   handle: getAccountHandle(SITE_METADATA.linkedin),
+  //   href: SITE_METADATA.linkedin,
+  //   Icon: () => <Linkedin size={20} strokeWidth={1.5} />,
+  //   umamiEvent: 'profile-card-linkedin',
+  // },
   {
     platform: 'x',
     handle: getAccountHandle(SITE_METADATA.x),
