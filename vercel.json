@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/stats/:match*",
-      "destination": "https://analytics.leohuynh.dev/:match*"
+      "destination": "https://umami-m1lcajim1-wangjinxi0518s-projects.vercel.app/:match*"
     }
   ],
   "headers": [
