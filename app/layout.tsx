@@ -14,6 +14,7 @@ import { TiltedGridBackground } from '~/components/ui/tilted-grid-background'
 import { SITE_METADATA } from '~/data/site-metadata'
 import { ThemeProviders } from './theme-providers'
 import { SpeedInsights } from '@vercel/speed-insights/next'
+import { Analytics } from "@vercel/analytics/react"
 
 const FONT_PLAYPEN_SANS = Playpen_Sans({
   subsets: ['latin'],
@@ -117,6 +118,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Header />
             <main className="mb-auto grow">{children}</main>
             <SpeedInsights />
+            <Analytics />
           </KBarSearchProvider>
           <Footer />
         </ThemeProviders>
