@@ -29,7 +29,7 @@ export const SITE_METADATA = {
     umamiAnalytics: {
       websiteId: process.env.NEXT_UMAMI_ID,
       shareUrl:
-          'https://umami-m1lcajim1-wangjinxi0518s-projects.vercel.app/share/qhwZlvpngcvIm0RY/wangjinxi.me',
+          'https://analytics.wangjinxi.me/share/XrO8zMwNUCNuzIxf/wangjinxi.me',
     },
   },
   newsletter: {

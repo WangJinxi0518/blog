@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/stats/:match*",
-      "destination": "https://umami-m1lcajim1-wangjinxi0518s-projects.vercel.app/:match*"
+      "destination": "https://analytics.wangjinxi.me//:match*"
     }
   ],
   "headers": [
