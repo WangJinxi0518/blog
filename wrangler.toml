@@ -1,7 +1,7 @@
-name = "my-app"
+name = "blog"
 compatibility_date = "2025-05-05"
 compatibility_flags = ["nodejs_compat"]
-pages_build_output_dir = ".vercel/output/static"
+"pages_build_output_dir": ".vercel/output/static"
 
 [env.production.vars]
 SPOTIFY_CLIENT_ID="47b5b2ae756f416d99bc3185a9702817"
